@@ -1,0 +1,151 @@
+<ion-header mode="ios">
+  <ion-toolbar >
+    <div *ngIf="uType == 0">
+      <ion-button color="light" (click)="navigateBack()"> 
+      <img src="/assets/Back.png" width="30px" height="30px" >
+      Atras
+    </ion-button>
+    </div>
+    <ion-title> Sala de Juntas</ion-title>
+    <ion-button slot="end" (click)="salir()">
+      Salir
+      <ion-icon  ios="exit-outline" md="exit-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<!--
+  this information is the users in the Meeting site
+-->
+
+<ion-content mode="ios" >
+
+
+  <ion-refresher slot="fixed"(ionRefresh)="refresh($event)" >
+    <ion-refresher-content
+      pulling-icon="chevron-down-circle-outline"
+      pulling-text="Pull to refresh"
+      refreshing-spinner="circles"
+      refreshing-text="Actualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  
+ <ion-grid >
+  <ion-row class="style-row">
+
+    <ion-col >
+      <ion-label>
+        <ion-text class="">
+          Nombre
+        </ion-text>
+      </ion-label>
+    </ion-col>
+
+    <ion-col >
+      <ion-label>
+        <ion-text >
+          Nivel
+        </ion-text>
+      </ion-label>
+    </ion-col>
+
+    <ion-col >
+      <ion-label >
+        <ion-text >
+          Institucion
+        </ion-text >
+      </ion-label>
+    </ion-col>
+
+    <ion-col >
+      <ion-label>
+        <ion-text >
+          Asistencia
+        </ion-text>
+      </ion-label>
+    </ion-col>
+    
+  </ion-row>  
+
+
+  <!---->
+
+  <div *ngFor="let user of users" class="div-style"  >
+    <ion-list >
+      <ion-row class="style-row2">
+        <ion-col>
+        <ion-label>
+          <ion-text>
+            {{user.nombre}}</ion-text>
+          <ion-text>
+            {{user.apaterno}}</ion-text>
+          <ion-text>
+            {{user.amaterno}} </ion-text>
+        </ion-label>
+      </ion-col>
+      <ion-col >
+        <ion-label>
+          <ion-text >
+            {{user.nivel}}
+          </ion-text>
+        </ion-label>
+      </ion-col>
+      <ion-col>
+        {{user.institucion}}
+      </ion-col>
+      <ion-col>
+        <div *ngIf="user.access_sala == 1" >
+          <ion-toggle class="ion-toggle"  
+         checked="true" disabled  ></ion-toggle>
+        </div>
+        <div *ngIf="user.access_sala == 0" >
+          <ion-toggle class="ion-toggle"  
+         checked="false" disabled  ></ion-toggle>
+        </div>
+
+        
+      </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+
+</ion-grid>
+</ion-content>
+
+
+
+
+<!--
+  Data for the Server DB
+
+<ion-row class="style-row2" >
+    <ion-col >
+      <ion-label >
+        <ion-text >
+          JUAN JIMENEZ SANCHEZ</ion-text>
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      INE
+    </ion-col>
+    <ion-col >
+        <ion-toggle class="ion-toggle" disabled="true"></ion-toggle>
+    </ion-col>
+  </ion-row>  
+  <ion-row class="style-row2" >
+    <ion-col >
+      <ion-label >
+        <ion-text >
+          Yotzin Alexander Contreras Herrera</ion-text>
+      </ion-label>
+    </ion-col>
+    <ion-col>
+      DURANGO    
+    </ion-col>
+    <ion-col >
+        <ion-toggle  class="ion-toggle" disabled="true" checked="true"></ion-toggle>
+    </ion-col>
+  </ion-row>  
+
+-->

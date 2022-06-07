@@ -1,0 +1,55 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+<ion-content>
+  <ion-item>
+    <img src="/assets/QR.png" class="center" >
+  </ion-item>
+
+
+
+<form #formulario="ngForm" (ngSubmit)="login()">
+  <ion-grid class="ion-text-center" >
+    <ion-row>
+      <ion-col align-self-center>
+        
+        <ion-item color="transparent" class="ion-text-center">
+          <ion-label position="floating">Usuario</ion-label>
+            <ion-input 
+            name="user" 
+            color="dark" 
+            [(ngModel)]="loginUsr.user" 
+            >
+            </ion-input>
+        </ion-item>
+      
+        <ion-item color="transparent" class="ion-text-center">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input 
+          name="password" 
+          color="dark" 
+          type="password" 
+          [(ngModel)]="loginUsr.password"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button  
+        color="danger" 
+        type="submit" 
+        class="ion-activatable ripple-parent" 
+        [disabled]="formulario.invalid" >
+          Ingresar
+          <ion-ripple-effect ></ion-ripple-effect>
+        </ion-button >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+
+
+
+</ion-content>

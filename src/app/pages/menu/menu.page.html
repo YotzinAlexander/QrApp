@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-button color="light"  (click)="navigateBack()"> 
+      <img src="/assets/Back.png" width="30px" height="30px" >
+      Atras
+    </ion-button>
+    <ion-title> Menú de Opciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  
+  <ion-item>
+    <img src="/assets/menu2.png" class="center" >
+  </ion-item>
+
+  <section>
+    <!--
+    <header class="style-text">Menú de Opciones</header>
+    -->
+      <ion-button    class=" style-button ion-activatable ripple-parent" (click)="navigateLector()">Lector QR</ion-button>
+  </section>
+
+  <section>
+      <ion-button   class="style-button ion-activatable ripple-parent "  (click)="navigateVisualizador()">Sala de Juntas</ion-button>
+  </section>
+
+</ion-content>

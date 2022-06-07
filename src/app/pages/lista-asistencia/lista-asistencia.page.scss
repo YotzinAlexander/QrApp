@@ -1,0 +1,72 @@
+.ion-align-self-start{
+    align-self: flex-start
+}
+
+.style-button{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+    color: #205375;
+}
+
+
+.ion-align-items-center{
+    align-items: center
+}
+
+.style-toolbar{
+    background: #205375;
+    border-radius: 5px;
+    font-size: 10px;
+    padding: 5px 10px 5px 12px;
+    border: 5px solid #04293A;
+}
+
+.style-row{
+    background: #041C32;
+    border-radius: 20px;
+    color: #EFEFEF;
+    font-size: 20px;
+    padding: 5px 10px 5px 12px;
+    border: 5px solid #04293A;
+    margin: 10px;
+    
+}
+.style-row2{
+    background: #041C32;
+    border-radius: 20px;
+    color: #EFEFEF;
+    font-size: 15px;
+    padding: 5px 10px 5px 12px;
+    border: 5px solid #04293A;
+    margin: 10px;
+    
+}
+
+.style-item{
+    border-radius: 100;
+}
+
+.ion-toggle {
+    --background: #EFEF;
+    --background-checked: #33ba17;
+  
+    --handle-background: #F66B0E;
+    --handle-background-checked: #000;
+}
+
+
+
+.ion-toggle::before {
+    position: absolute;
+  
+    top: 12px;
+    left: 7px;
+  
+    content: "NO";
+  
+    color: white;
+    font-size: 8px;
+  
+    z-index: 1;
+  }
